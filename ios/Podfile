@@ -5,9 +5,10 @@ platform :ios, '10.0'
 
 target 'RN_CLI_LoginFormValidation' do
   config = use_native_modules!
-
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
   use_react_native!(:path => config["reactNativePath"])
-
+  
   target 'RN_CLI_LoginFormValidationTests' do
     inherit! :complete
     # Pods for testing
