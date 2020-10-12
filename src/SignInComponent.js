@@ -24,6 +24,13 @@ export default function SignInComponent(props) {
   const [password, setPassword] = useState('')
   const [secureTextEntry, setSecureTextEntry] = useState(true)
 
+  const [data, setData] = useState({
+    username: '',
+    password: '',
+    check_textInputChange: false,
+    secureTextEntry: true
+  })
+
   const textInputChange = (value) => {
     if(value.length !== 0){
       setCheck_textInputChange(true)
@@ -93,12 +100,16 @@ export default function SignInComponent(props) {
 
         <Text style={{color: '#009bd1', marginTop: 15}}>Forgot Password?</Text>
         <View style={styles.button}>
+        <TouchableOpacity style={styles.signIn}
+          onPress={() => {}}
+        >
           <LinearGradient
             colors={['#5db8fe', '#39cff2']}
             style={styles.signIn}
           >
             <Text style={[styles.textSign, {color: 'white'}]}>Sign In</Text>
           </LinearGradient>
+          </TouchableOpacity>
           <TouchableOpacity
             onPress={() => navigation.navigate('SignUpComponent')}
             style={[styles.signIn, {
